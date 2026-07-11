@@ -1,0 +1,250 @@
+/* ---- Quality Logs design tokens (brand: Midnight / Signal Cyan) ---- */
+
+:root,
+:root[data-theme='dark'] {
+  --bg-0: #04101a;
+  --bg-1: #061c2b;
+  --navy: #082635;
+  --panel-solid: #04101a;
+
+  --nav-bg: rgba(5, 16, 25, 0.72);
+  --drawer-bg: rgba(4, 14, 22, 0.9);
+  --glass: rgba(255, 255, 255, 0.04);
+  --glass-strong: rgba(255, 255, 255, 0.08);
+  --stroke: rgba(255, 255, 255, 0.08);
+  --stroke-strong: rgba(255, 255, 255, 0.16);
+
+  --cyan: #18c8db;
+  --cyan-bright: #5eddee;
+  --teal-deep: #0c8a9b;
+  --accent: #18c8db;         /* text-safe accent on current bg */
+  --accent-strong: #5eddee;
+  --cyan-soft: rgba(24, 200, 219, 0.16);
+  --tint-cyan: rgba(24, 200, 219, 0.1);
+
+  --ink-1: #ecf4f7;
+  --ink-2: #96adba;
+  --ink-3: #5a7280;
+
+  --surface-2: rgba(255, 255, 255, 0.03);
+  --card-bg: linear-gradient(160deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.035));
+  --card-border: rgba(255, 255, 255, 0.12);
+  --shadow-card: 0 24px 60px rgba(0, 0, 0, 0.45);
+  --panel-bg: linear-gradient(170deg, rgba(10, 34, 48, 0.85), rgba(5, 18, 28, 0.9));
+  --panel-shadow: 0 40px 100px rgba(0, 0, 0, 0.55);
+  --track-bg: rgba(255, 255, 255, 0.09);
+
+  --hero-wash: linear-gradient(180deg, #051520 0%, #04101a 100%);
+  --grid-dot: rgba(236, 244, 247, 0.1);
+  --map-line: rgba(255, 255, 255, 0.055);
+  --map-line-strong: rgba(255, 255, 255, 0.09);
+  --map-block: rgba(255, 255, 255, 0.028);
+  --map-label: rgba(236, 244, 247, 0.55);
+
+  --good: #8befbf;
+  --good-bg: rgba(52, 211, 153, 0.12);
+  --good-border: rgba(52, 211, 153, 0.25);
+  --warn: #fbbf6e;
+  --warn-bg: rgba(251, 191, 110, 0.12);
+
+  --pin-fill: #18c8db;
+  --pin-dot: #04101a;
+
+  --headline-grad: linear-gradient(95deg, #18c8db 5%, #5eddee 55%, #a7eff8 100%);
+
+  /* Photo-hero overlay washes + ghost numeral visibility */
+  --hero-photo-wash-a: linear-gradient(100deg, rgba(4, 16, 26, 0.93) 8%, rgba(4, 16, 26, 0.55) 48%, rgba(8, 38, 53, 0.3) 100%);
+  --hero-photo-wash-b: linear-gradient(180deg, rgba(4, 16, 26, 0.35) 0%, transparent 35%, #04101a 99%);
+  --ghost-num: 0.07;
+  --ghost-num-hover: 0.12;
+
+  --font-display: 'Space Grotesk', 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-body: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  color-scheme: dark;
+}
+
+:root[data-theme='light'] {
+  --bg-0: #f4f6f8;
+  --bg-1: #ffffff;
+  --navy: #082635;
+  --panel-solid: #ffffff;
+
+  --nav-bg: rgba(255, 255, 255, 0.78);
+  --drawer-bg: rgba(248, 250, 251, 0.94);
+  --glass: rgba(8, 38, 53, 0.045);
+  --glass-strong: rgba(8, 38, 53, 0.08);
+  --stroke: rgba(8, 38, 53, 0.12);
+  --stroke-strong: rgba(8, 38, 53, 0.22);
+
+  --cyan: #18c8db;
+  --cyan-bright: #18c8db;
+  --teal-deep: #0c8a9b;
+  --accent: #0c8a9b;
+  --accent-strong: #0c8a9b;
+  --cyan-soft: rgba(24, 200, 219, 0.18);
+  --tint-cyan: rgba(24, 200, 219, 0.14);
+
+  --ink-1: #082635;
+  --ink-2: #46626f;
+  --ink-3: #7c8b99;
+
+  --surface-2: #ffffff;
+  --card-bg: rgba(255, 255, 255, 0.88);
+  --card-border: rgba(8, 38, 53, 0.1);
+  --shadow-card: 0 20px 50px rgba(8, 38, 53, 0.12);
+  --panel-bg: linear-gradient(170deg, #ffffff, #f0f5f7);
+  --panel-shadow: 0 30px 80px rgba(8, 38, 53, 0.16);
+  --track-bg: rgba(8, 38, 53, 0.1);
+
+  --hero-wash: linear-gradient(180deg, #fdfeff 0%, #f4f6f8 100%);
+  --grid-dot: rgba(8, 38, 53, 0.14);
+  --map-line: rgba(8, 38, 53, 0.07);
+  --map-line-strong: rgba(8, 38, 53, 0.12);
+  --map-block: rgba(8, 38, 53, 0.04);
+  --map-label: rgba(8, 38, 53, 0.55);
+
+  --good: #0e9f6e;
+  --good-bg: rgba(14, 159, 110, 0.1);
+  --good-border: rgba(14, 159, 110, 0.25);
+  --warn: #b45309;
+  --warn-bg: rgba(180, 83, 9, 0.1);
+
+  --pin-fill: #082635;
+  --pin-dot: #ffffff;
+
+  --headline-grad: linear-gradient(95deg, #0c8a9b 5%, #18c8db 60%, #2fd4e6 100%);
+
+  --hero-photo-wash-a: linear-gradient(100deg, rgba(244, 246, 248, 0.93) 5%, rgba(244, 246, 248, 0.55) 40%, rgba(244, 246, 248, 0.16) 72%, rgba(244, 246, 248, 0.04) 100%);
+  --hero-photo-wash-b: linear-gradient(180deg, rgba(244, 246, 248, 0.3) 0%, transparent 28%, transparent 58%, #f4f6f8 100%);
+  --ghost-num: 0.17;
+  --ghost-num-hover: 0.26;
+
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+[id] {
+  scroll-margin-top: 96px;
+}
+
+body {
+  background-color: var(--bg-0);
+  color: var(--ink-1);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+::selection {
+  background: rgba(24, 200, 219, 0.3);
+}
+
+/* ---- Scrollbar ---- */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-0);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--stroke-strong);
+  border-radius: 8px;
+  border: 2px solid var(--bg-0);
+}
+
+/* ---- Shared keyframes ---- */
+
+@keyframes pulseDot {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(24, 200, 219, 0.55);
+  }
+  70% {
+    box-shadow: 0 0 0 7px rgba(24, 200, 219, 0);
+  }
+}
+
+/* GPS signal arcs on the logo mark — staggered radio sweep */
+@keyframes signalPulse {
+  0%,
+  100% {
+    opacity: var(--arc-rest, 0.35);
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.sig-arc {
+  animation: signalPulse 3.2s ease-in-out infinite;
+}
+.sig-arc-1 {
+  --arc-rest: 0.9;
+  animation-delay: 0s;
+}
+.sig-arc-2 {
+  --arc-rest: 0.55;
+  animation-delay: 0.35s;
+}
+.sig-arc-3 {
+  --arc-rest: 0.3;
+  animation-delay: 0.7s;
+}
+
+/* Expanding SVG ping ring (GPS pulses on maps) */
+@keyframes svgPing {
+  0% {
+    transform: scale(0.4);
+    opacity: 0.9;
+  }
+  80%,
+  100% {
+    transform: scale(2.8);
+    opacity: 0;
+  }
+}
+
+.svg-ping {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: svgPing 2.6s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+/* Energy particles flowing along route paths */
+@keyframes routeFlow {
+  to {
+    stroke-dashoffset: -160;
+  }
+}
+
+.route-flow {
+  stroke-dasharray: 1 15;
+  animation: routeFlow 3.2s linear infinite;
+}
+
+/* Infinite logo marquee */
+@keyframes marqueeX {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .svg-ping,
+  .route-flow,
+  .sig-arc {
+    animation: none;
+  }
+}

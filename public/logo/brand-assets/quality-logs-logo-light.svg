@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="160" viewBox="0 0 640 160" fill="none">
+  <defs>
+    
+  </defs>
+  <g transform="translate(20,28) scale(1.16)">
+    <path d="M56 26 a8 8 0 0 1 6 8" stroke="#18C8DB" stroke-width="4" fill="none" stroke-linecap="round" opacity=".9"></path>
+    <path d="M61 20 a15 15 0 0 1 10 13" stroke="#18C8DB" stroke-width="4" fill="none" stroke-linecap="round" opacity=".6"></path>
+    <path d="M66 15 a22 22 0 0 1 13 18" stroke="#18C8DB" stroke-width="4" fill="none" stroke-linecap="round" opacity=".35"></path>
+    <path d="M42 22 C31 22 23 30.5 23 41 C23 52 38 66 42 74 C46 66 61 52 61 41 C61 30.5 53 22 42 22 Z" fill="#082635"></path>
+    <circle cx="42" cy="40" r="7.5" fill="#FFFFFF"></circle>
+  </g>
+  <text class="word" x="156" y="90"><tspan fill="#082635">QUALITY</tspan> <tspan fill="#0C8A9B">LOGS</tspan></text>
+  <text class="tag" x="158" y="123" fill="#7C8B99">KNOW EVERY MILE</text>
+</svg>
