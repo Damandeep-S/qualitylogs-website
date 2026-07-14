@@ -2,8 +2,8 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 /**
- * On route change: jump to top. If the location carries a hash (e.g. /#pricing
- * clicked from the About page), smooth-scroll to that section once it exists.
+ * On route change: jump to top. If the location carries a hash (e.g. /eld#devices
+ * clicked from another page), smooth-scroll to that section once it exists.
  */
 export default function ScrollManager() {
   const { pathname, hash } = useLocation();

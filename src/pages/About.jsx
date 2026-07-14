@@ -9,7 +9,6 @@ import {
   TbMail,
   TbRoad,
   TbSchool,
-  TbShieldCheckFilled,
   TbActivityHeartbeat,
   TbUserHeart,
 } from 'react-icons/tb';
@@ -132,8 +131,8 @@ function AboutHero() {
           transition={{ delay: 0.85, duration: 0.8, ease: easeOut }}
         >
           <Typography sx={{ mt: 3, maxWidth: 560, fontSize: { xs: '1.02rem', md: '1.14rem' }, lineHeight: 1.65, color: 'var(--ink-2)' }}>
-            Quality Logs was started by people who ran fleets — and got tired of telematics that
-            treated drivers like suspects and dispatchers like data-entry clerks.
+            ELD compliance, dashcams, permits and fuel savings — one team that keeps trucking
+            companies legal, safe and profitable on every mile.
           </Typography>
         </motion.div>
       </Container>
@@ -192,182 +191,6 @@ function StatsBand() {
             ))}
           </Box>
         </Reveal>
-      </Container>
-    </Box>
-  );
-}
-
-/* ---------- Story split ---------- */
-
-function Story() {
-  return (
-    <Box component="section" sx={{ py: { xs: 8, md: 12 } }}>
-      <Container>
-        <Box
-          sx={{
-            display: 'grid',
-            gridTemplateColumns: { xs: '1fr', md: '1.1fr 0.9fr' },
-            gap: { xs: 6, md: 10 },
-            alignItems: 'center',
-          }}
-        >
-          <Box>
-            <SectionHeading
-              align="left"
-              eyebrow="Our story"
-              title="Started in a dispatch office,"
-              gradientWord="not a boardroom"
-              sx={{ mb: 3.5 }}
-            />
-            <Reveal delay={0.15}>
-              <Typography sx={{ color: 'var(--ink-2)', lineHeight: 1.75, fontSize: '1rem' }}>
-                Our founders spent years dispatching trucks with tools that fought back: ELDs that
-                dropped logs the night before an audit, cameras that flagged everything except what
-                mattered, and support lines that went to voicemail at 2 AM.
-              </Typography>
-            </Reveal>
-            <Reveal delay={0.25}>
-              <Typography sx={{ mt: 2.5, color: 'var(--ink-2)', lineHeight: 1.75, fontSize: '1rem' }}>
-                So we built the platform we always wanted to buy: one login, honest pricing, hardware
-                that installs itself, and a support team that picks up the phone — every hour of every
-                night. Today more than a thousand fleets run on Quality Logs, and we still answer at 2 AM.
-              </Typography>
-            </Reveal>
-            <Reveal delay={0.35}>
-              <Box
-                sx={{
-                  mt: 4,
-                  pl: 2.5,
-                  borderLeft: '3px solid var(--cyan)',
-                  fontFamily: 'var(--font-display)',
-                  fontWeight: 600,
-                  fontSize: '1.1rem',
-                  color: 'var(--ink-1)',
-                }}
-              >
-                “If it slows a driver down, it doesn’t ship.”
-                <Box sx={{ mt: 0.75, fontFamily: 'var(--font-body)', fontWeight: 500, fontSize: '0.85rem', color: 'var(--ink-3)' }}>
-                  — the first rule of our product team
-                </Box>
-              </Box>
-            </Reveal>
-          </Box>
-
-          {/* Photo card with floating badges */}
-          <Reveal delay={0.2}>
-            <Box sx={{ position: 'relative', maxWidth: 460, mx: 'auto' }}>
-              <Box
-                sx={{
-                  borderRadius: '24px',
-                  overflow: 'hidden',
-                  border: '1px solid var(--card-border)',
-                  boxShadow: 'var(--panel-shadow)',
-                  position: 'relative',
-                  aspectRatio: '4 / 5',
-                  '&:hover img': { transform: 'scale(1.04)' },
-                }}
-              >
-                <Box
-                  component="img"
-                  src="/images/mission-truck.jpg"
-                  alt="Semi truck under a dramatic sky"
-                  sx={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    display: 'block',
-                    filter: 'saturate(0.8)',
-                    transition: 'transform 0.7s cubic-bezier(0.22,1,0.36,1)',
-                  }}
-                />
-                <Box
-                  sx={{
-                    position: 'absolute',
-                    inset: 0,
-                    background: 'linear-gradient(180deg, rgba(8,38,53,0.1), transparent 40%, rgba(4,16,26,0.75) 100%)',
-                  }}
-                />
-                <Box sx={{ position: 'absolute', left: 20, bottom: 18, color: 'rgba(236,244,247,0.9)', fontSize: '0.82rem', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-                  Every mile, accounted for
-                </Box>
-              </Box>
-
-              {/* Floating badge — FMCSA */}
-              <Box
-                component={motion.div}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.5, duration: 0.8, ease: easeOut }}
-                sx={{ position: 'absolute', top: 22, right: { xs: -8, md: -30 } }}
-              >
-                <motion.div
-                  animate={{ y: [0, -8, 0] }}
-                  transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-                >
-                  <Box
-                    sx={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: 1.25,
-                      px: 2,
-                      py: 1.5,
-                      borderRadius: '16px',
-                      /* Sits on a photo — stays dark glass in both themes */
-                      background: 'linear-gradient(160deg, rgba(10, 34, 48, 0.88), rgba(5, 18, 28, 0.9))',
-                      backdropFilter: 'blur(20px)',
-                      border: '1px solid rgba(255, 255, 255, 0.16)',
-                      boxShadow: '0 24px 60px rgba(0, 0, 0, 0.45)',
-                    }}
-                  >
-                    <TbShieldCheckFilled size={26} color="#18C8DB" />
-                    <Box>
-                      <Box sx={{ fontSize: 13, fontWeight: 700, color: '#ECF4F7' }}>FMCSA-registered</Box>
-                      <Box sx={{ fontSize: 11.5, color: '#96ADBA' }}>ELD compliance, certified</Box>
-                    </Box>
-                  </Box>
-                </motion.div>
-              </Box>
-
-              {/* Floating badge — support */}
-              <Box
-                component={motion.div}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.65, duration: 0.8, ease: easeOut }}
-                sx={{ position: 'absolute', bottom: 46, left: { xs: -8, md: -36 } }}
-              >
-                <motion.div
-                  animate={{ y: [0, -9, 0] }}
-                  transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-                >
-                  <Box
-                    sx={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: 1.25,
-                      px: 2,
-                      py: 1.5,
-                      borderRadius: '16px',
-                      /* Sits on a photo — stays dark glass in both themes */
-                      background: 'linear-gradient(160deg, rgba(10, 34, 48, 0.88), rgba(5, 18, 28, 0.9))',
-                      backdropFilter: 'blur(20px)',
-                      border: '1px solid rgba(255, 255, 255, 0.16)',
-                      boxShadow: '0 24px 60px rgba(0, 0, 0, 0.45)',
-                    }}
-                  >
-                    <TbHeadset size={24} color="#18C8DB" />
-                    <Box>
-                      <Box sx={{ fontSize: 13, fontWeight: 700, color: '#ECF4F7' }}>US-based support</Box>
-                      <Box sx={{ fontSize: 11.5, color: '#96ADBA' }}>24/7 · median pickup 40s</Box>
-                    </Box>
-                  </Box>
-                </motion.div>
-              </Box>
-            </Box>
-          </Reveal>
-        </Box>
       </Container>
     </Box>
   );
@@ -721,9 +544,9 @@ function Crew() {
             <Box sx={{ ...photoCardSx(), height: '100%', minHeight: 300 }}>
               <Box
                 component="img"
-                src="/images/driver.jpg"
-                alt="Professional truck driver at the wheel"
-                sx={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 30%', display: 'block', filter: 'saturate(0.85)', transition: 'transform 0.7s cubic-bezier(0.22,1,0.36,1)' }}
+                src="/images/driver3.jpg"
+                alt="Professional truck driver reviewing his checklist at the wheel"
+                sx={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '68% center', display: 'block', filter: 'saturate(0.85)', transition: 'transform 0.7s cubic-bezier(0.22,1,0.36,1)' }}
               />
               <Box sx={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, transparent 55%, rgba(4,16,26,0.7))' }} />
               <Box sx={{ position: 'absolute', left: 18, bottom: 14, fontSize: '0.8rem', fontWeight: 600, color: 'rgba(236,244,247,0.9)' }}>
@@ -742,7 +565,6 @@ export default function About() {
     <>
       <AboutHero />
       <StatsBand />
-      <Story />
       <SupportPromise />
       <Values />
       <Crew />

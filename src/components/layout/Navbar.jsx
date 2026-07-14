@@ -6,15 +6,16 @@ import IconButton from '@mui/material/IconButton';
 import Stack from '@mui/material/Stack';
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from 'framer-motion';
 import { TbArrowRight, TbMenu2, TbMoonStars, TbPhone, TbSunHigh, TbX } from 'react-icons/tb';
-import { Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink, useLocation } from 'react-router-dom';
 import { useColorMode } from '../../theme/ColorModeContext';
 import Logo from '../common/Logo';
 
 const LINKS = [
-  { label: 'Platform', href: '/#platform' },
-  { label: 'Solutions', href: '/#solutions' },
-  { label: 'Devices', href: '/#devices' },
-  { label: 'Pricing', href: '/#pricing' },
+  { label: 'Home', href: '/' },
+  { label: 'ELD', href: '/eld' },
+  { label: 'Dashcam', href: '/dashcam' },
+  { label: 'Safety', href: '/safety' },
+  { label: 'Fuel Card', href: '/fuel-card' },
   { label: 'About', href: '/about' },
 ];
 
@@ -56,6 +57,7 @@ function ThemeToggle({ sx }) {
 
 function DesktopLinks() {
   const [hovered, setHovered] = useState(null);
+  const { pathname } = useLocation();
 
   return (
     <Box
@@ -69,46 +71,67 @@ function DesktopLinks() {
         transform: 'translateX(-50%)',
       }}
     >
-      {LINKS.map((link) => (
-        <Box
-          key={link.label}
-          component={RouterLink}
-          to={link.href}
-          onMouseEnter={() => setHovered(link.label)}
-          sx={{
-            position: 'relative',
-            px: 1.75,
-            py: 1,
-            borderRadius: 999,
-            fontSize: '0.905rem',
-            fontWeight: 500,
-            textDecoration: 'none',
-            color: hovered === link.label ? 'var(--ink-1)' : 'var(--ink-2)',
-            transition: 'color 0.2s ease',
-          }}
-        >
-          {hovered === link.label && (
-            <motion.span
-              layoutId="nav-hover-pill"
-              transition={{ type: 'spring', bounce: 0.22, duration: 0.5 }}
-              style={{
-                position: 'absolute',
-                inset: 0,
-                borderRadius: 999,
-                background: 'var(--glass-strong)',
-              }}
-            />
-          )}
-          <Box component="span" sx={{ position: 'relative' }}>
-            {link.label}
+      {LINKS.map((link) => {
+        const active = pathname === link.href;
+        return (
+          <Box
+            key={link.label}
+            component={RouterLink}
+            to={link.href}
+            onMouseEnter={() => setHovered(link.label)}
+            sx={{
+              position: 'relative',
+              px: 1.75,
+              py: 1,
+              borderRadius: 999,
+              fontSize: '0.905rem',
+              fontWeight: active ? 600 : 500,
+              textDecoration: 'none',
+              color: active || hovered === link.label ? 'var(--ink-1)' : 'var(--ink-2)',
+              transition: 'color 0.2s ease',
+            }}
+          >
+            {hovered === link.label && (
+              <motion.span
+                layoutId="nav-hover-pill"
+                transition={{ type: 'spring', bounce: 0.22, duration: 0.5 }}
+                style={{
+                  position: 'absolute',
+                  inset: 0,
+                  borderRadius: 999,
+                  background: 'var(--glass-strong)',
+                }}
+              />
+            )}
+            <Box component="span" sx={{ position: 'relative' }}>
+              {link.label}
+            </Box>
+            {active && (
+              <Box
+                component={motion.span}
+                layoutId="nav-active-bar"
+                transition={{ type: 'spring', bounce: 0.25, duration: 0.6 }}
+                sx={{
+                  position: 'absolute',
+                  bottom: 3,
+                  left: 'calc(50% - 9px)',
+                  width: 18,
+                  height: 2.5,
+                  borderRadius: 2,
+                  background: 'var(--accent)',
+                }}
+              />
+            )}
           </Box>
-        </Box>
-      ))}
+        );
+      })}
     </Box>
   );
 }
 
 function MobileMenu({ open, onClose }) {
+  const { pathname } = useLocation();
+
   return (
     <Drawer
       anchor="right"
@@ -151,19 +174,27 @@ function MobileMenu({ open, onClose }) {
                 to={link.href}
                 onClick={onClose}
                 sx={{
-                  display: 'block',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 1.5,
                   py: 1.5,
                   fontFamily: 'var(--font-display)',
                   fontSize: '1.8rem',
                   fontWeight: 600,
                   letterSpacing: '-0.02em',
-                  color: 'var(--ink-1)',
+                  color: pathname === link.href ? 'var(--accent)' : 'var(--ink-1)',
                   textDecoration: 'none',
                   '&:hover': { color: 'var(--accent)' },
                   transition: 'color 0.2s ease',
                 }}
               >
                 {link.label}
+                {pathname === link.href && (
+                  <Box
+                    component="span"
+                    sx={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--accent)' }}
+                  />
+                )}
               </Box>
             </motion.div>
           ))}

@@ -19,7 +19,7 @@ const FAQS = [
   },
   {
     q: 'Am I locked into a contract?',
-    a: 'No long-term contracts. Monthly plans cancel anytime; annual plans simply price in the hardware. If you leave, the data export is one click — your data is yours.',
+    a: 'ELD plans are month-to-month — cancel anytime. Dashcams give you the choice: buy your camera and stay contract-free at $20/month, or take the 3-year plan at $22/month and get the camera hardware free. Either way, your data export is one click — your data is yours.',
   },
   {
     q: 'Does it work with mixed fleets?',

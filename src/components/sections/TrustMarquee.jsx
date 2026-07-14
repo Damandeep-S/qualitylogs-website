@@ -39,7 +39,7 @@ export default function TrustMarquee() {
             px: 2,
           }}
         >
-          Trusted by 1,200+ fleets across North America
+          Trusted by 2,500+ fleets across North America
         </Box>
       </Reveal>
 

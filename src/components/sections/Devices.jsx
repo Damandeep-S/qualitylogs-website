@@ -147,7 +147,7 @@ const DEVICES = [
     icon: TbCpu,
   },
   {
-    name: 'QL Vision AI',
+    name: 'Dual Lens Dashcam',
     kind: 'Dual-facing dash camera',
     desc: 'Road- and driver-facing HD with on-device AI. Incident clips upload themselves before the truck stops rolling.',
     specs: ['1080p HD', 'On-device AI', 'Night vision'],

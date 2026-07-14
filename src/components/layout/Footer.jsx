@@ -15,31 +15,28 @@ import Logo from '../common/Logo';
 
 const COLUMNS = [
   {
-    title: 'Platform',
+    title: 'Services',
     links: [
-      { label: 'GPS Fleet Tracking', to: '/#platform' },
-      { label: 'ELD Compliance', to: '/#platform' },
-      { label: 'AI Dash Cameras', to: '/#platform' },
-      { label: 'Fuel Monitoring', to: '/#platform' },
-      { label: 'Asset Tracking', to: '/#platform' },
-      { label: 'Driver Management', to: '/#platform' },
+      { label: 'ELD & Fleet Tracking', to: '/eld' },
+      { label: 'AI Dashcam', to: '/dashcam' },
+      { label: 'Safety & Compliance', to: '/safety' },
+      { label: 'Fuel Card', to: '/fuel-card' },
     ],
   },
   {
-    title: 'Solutions',
+    title: 'Platform',
     links: [
-      { label: 'Compliance', to: '/#solutions' },
-      { label: 'Safety', to: '/#solutions' },
-      { label: 'Efficiency', to: '/#solutions' },
-      { label: 'Visibility', to: '/#solutions' },
-      { label: 'Devices', to: '/#devices' },
+      { label: 'GPS Fleet Tracking', to: '/eld#platform' },
+      { label: 'Solutions', to: '/eld#solutions' },
+      { label: 'Devices', to: '/eld#devices' },
+      { label: 'Dashcam Pricing', to: '/dashcam#dashcam-plans' },
+      { label: 'Permits & Filings', to: '/safety#filings' },
     ],
   },
   {
     title: 'Company',
     links: [
       { label: 'About Us', to: '/about' },
-      { label: 'Pricing', to: '/#pricing' },
       { label: 'FAQ', to: '/#faq' },
       { label: 'Get a demo', to: '/#demo' },
       { label: 'Portal', to: '/portal' },
