@@ -110,7 +110,7 @@ export default function CtaBanner() {
                 </Button>
               </Box>
               <Typography sx={{ mt: 2.5, fontSize: '0.82rem', color: 'rgba(150,173,186,0.75)' }}>
-                Free 30-day pilot on your own trucks · no credit card
+                Free 7-days pilot on your own trucks · no credit card
               </Typography>
             </Box>
           </Box>
