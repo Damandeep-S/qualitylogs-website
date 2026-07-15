@@ -11,6 +11,7 @@ import Dashcam from './pages/Dashcam';
 import Safety from './pages/Safety';
 import FuelCard from './pages/FuelCard';
 import About from './pages/About';
+import Contact from './pages/Contact';
 import PortalHub from './pages/PortalHub';
 
 export default function App() {
@@ -28,6 +29,7 @@ export default function App() {
               <Route path="/safety" element={<Safety />} />
               <Route path="/fuel-card" element={<FuelCard />} />
               <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
               <Route path="/portal" element={<PortalHub />} />
             </Routes>
           </Box>

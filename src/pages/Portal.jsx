@@ -317,7 +317,7 @@ export default function Portal() {
                 New to Quality Logs?{' '}
                 <Box
                   component={RouterLink}
-                  to="/#demo"
+                  to="/contact"
                   sx={{ fontWeight: 700, color: 'var(--accent)', textDecoration: 'none', '&:hover': { textDecoration: 'underline' } }}
                 >
                   Get a demo

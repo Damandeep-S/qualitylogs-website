@@ -261,7 +261,7 @@ function DashcamPlans() {
 
                 <Button
                   component={RouterLink}
-                  to="/#demo"
+                  to="/contact"
                   fullWidth
                   endIcon={<TbArrowRight size={17} />}
                   sx={{
@@ -558,7 +558,7 @@ function DashcamHardware() {
             </Box>
             <Button
               component={RouterLink}
-              to="/#demo"
+              to="/contact"
               endIcon={<TbArrowRight size={16} />}
               sx={{
                 px: 2.75,

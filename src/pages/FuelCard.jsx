@@ -133,7 +133,7 @@ function FuelHero() {
           <Box sx={{ mt: 4.5, display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: 2 }}>
             <Button
               component={RouterLink}
-              to="/#demo"
+              to="/contact"
               endIcon={<TbArrowRight size={18} />}
               sx={{
                 px: 3.25,

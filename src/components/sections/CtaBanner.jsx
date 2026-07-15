@@ -4,6 +4,7 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import { motion } from 'framer-motion';
 import { TbArrowRight, TbPhone } from 'react-icons/tb';
+import { Link as RouterLink } from 'react-router-dom';
 import Reveal from '../common/Reveal';
 import { LogoMark } from '../common/Logo';
 
@@ -73,7 +74,8 @@ export default function CtaBanner() {
               </Typography>
               <Box sx={{ mt: 4.5, display: 'flex', flexWrap: 'wrap', gap: 1.75 }}>
                 <Button
-                  href="mailto:support@qualitylogs.us?subject=Demo%20request"
+                  component={RouterLink}
+                  to="/contact"
                   size="large"
                   endIcon={<TbArrowRight size={19} />}
                   sx={{

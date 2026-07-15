@@ -6,6 +6,7 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { motion, useMotionValue, useScroll, useSpring, useTransform } from 'framer-motion';
 import { TbArrowRight, TbHeadset } from 'react-icons/tb';
+import { Link as RouterLink } from 'react-router-dom';
 import CountUp from '../../common/CountUp';
 import FleetMapVisual from './FleetMapVisual';
 import HeroBackground from './HeroBackground';
@@ -203,7 +204,8 @@ export default function Hero() {
               <motion.div {...fadeUp(0.9)}>
                 <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.75} sx={{ mt: 4.5 }}>
                   <Button
-                    href="#demo"
+                    component={RouterLink}
+                    to="/contact"
                     size="large"
                     endIcon={
                       <Box

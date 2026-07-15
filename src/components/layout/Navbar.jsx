@@ -227,7 +227,7 @@ function MobileMenu({ open, onClose }) {
               fullWidth
               size="large"
               component={RouterLink}
-              to="/#demo"
+              to="/contact"
               onClick={onClose}
               endIcon={<TbArrowRight />}
               sx={{
@@ -314,7 +314,7 @@ export default function Navbar() {
             </Button>
             <Button
               component={RouterLink}
-              to="/#demo"
+              to="/contact"
               endIcon={
                 <Box
                   component="span"

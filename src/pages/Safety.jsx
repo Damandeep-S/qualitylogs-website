@@ -244,7 +244,7 @@ function SafetyHero() {
               <Box sx={{ mt: 3, display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 2 }}>
                 <Button
                   component={RouterLink}
-                  to="/#demo"
+                  to="/contact"
                   endIcon={<TbArrowRight size={18} />}
                   sx={{
                     px: 3.25,
