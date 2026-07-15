@@ -108,6 +108,8 @@ export default function PortalHub() {
               key={portal.name}
               component={motion.a}
               href={portal.href}
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 + i * 0.12, duration: 0.7, ease: easeOut }}
