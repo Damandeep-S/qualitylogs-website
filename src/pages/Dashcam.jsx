@@ -111,7 +111,7 @@ function DashcamHero() {
         >
           <Typography sx={{ mt: 2.5, mx: 'auto', maxWidth: 560, fontSize: { xs: '1rem', md: '1.12rem' }, lineHeight: 1.65, color: 'var(--ink-2)' }}>
             Dual-lens HD cameras that protect your drivers, shut down false claims and keep
-            insurance honest — from $20 a month.
+            insurance honest — from $22 a month.
           </Typography>
         </motion.div>
       </Container>

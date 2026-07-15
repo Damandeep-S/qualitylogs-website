@@ -35,7 +35,7 @@ const SERVICES = [
     title: 'AI Dashcam',
     desc: 'Dual-lens HD cameras that protect your drivers and shut down false claims.',
     points: ['Dual Lens · $299', 'Mini Dashcam · $149', 'Free cam on 3-yr plan'],
-    price: '$20',
+    price: '$22',
     priceUnit: '/ mo',
     priceNote: 'Starting from',
     to: '/dashcam',
