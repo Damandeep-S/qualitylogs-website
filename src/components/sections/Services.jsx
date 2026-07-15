@@ -59,7 +59,7 @@ const SERVICES = [
     title: 'Fuel Card',
     desc: 'Prepaid, cardless fueling at TA, Petro and Love’s — real savings on every gallon.',
     points: ['Cardless fueling', 'TA · Petro · Love’s', 'Prepaid spend control'],
-    price: '$70',
+    price: '70¢',
     priceUnit: '/ gal',
     priceNote: 'Avg. savings',
     to: '/fuel-card',

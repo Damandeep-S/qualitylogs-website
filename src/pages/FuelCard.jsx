@@ -104,7 +104,7 @@ function FuelHero() {
               WebkitTextFillColor: 'transparent',
             }}
           >
-            <CountUp to={70} prefix="$" duration={2.2} delay={0.5} />
+            <CountUp to={70} suffix="¢" duration={2.2} delay={0.5} />
           </Box>
           <Typography
             sx={{
