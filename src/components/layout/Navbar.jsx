@@ -85,13 +85,17 @@ function DesktopLinks() {
               py: 1,
               borderRadius: 999,
               fontSize: '0.905rem',
-              fontWeight: active ? 600 : 500,
+              fontWeight: active ? 700 : 500,
               textDecoration: 'none',
-              color: active || hovered === link.label ? 'var(--ink-1)' : 'var(--ink-2)',
+              color: active
+                ? 'var(--accent)'
+                : hovered === link.label
+                  ? 'var(--ink-1)'
+                  : 'var(--ink-2)',
               transition: 'color 0.2s ease',
             }}
           >
-            {hovered === link.label && (
+            {hovered === link.label && !active && (
               <motion.span
                 layoutId="nav-hover-pill"
                 transition={{ type: 'spring', bounce: 0.22, duration: 0.5 }}
@@ -103,25 +107,22 @@ function DesktopLinks() {
                 }}
               />
             )}
-            <Box component="span" sx={{ position: 'relative' }}>
-              {link.label}
-            </Box>
             {active && (
-              <Box
-                component={motion.span}
-                layoutId="nav-active-bar"
+              <motion.span
+                layoutId="nav-active-pill"
                 transition={{ type: 'spring', bounce: 0.25, duration: 0.6 }}
-                sx={{
+                style={{
                   position: 'absolute',
-                  bottom: 3,
-                  left: 'calc(50% - 9px)',
-                  width: 18,
-                  height: 2.5,
-                  borderRadius: 2,
-                  background: 'var(--accent)',
+                  inset: 0,
+                  borderRadius: 999,
+                  background: 'var(--tint-cyan)',
+                  border: '1px solid rgba(24, 200, 219, 0.3)',
                 }}
               />
             )}
+            <Box component="span" sx={{ position: 'relative' }}>
+              {link.label}
+            </Box>
           </Box>
         );
       })}
