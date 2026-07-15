@@ -144,7 +144,7 @@ function AboutHero() {
 
 const STATS = [
   { static: '2019', label: 'Founded by fleet operators' },
-  { value: 1200, suffix: '+', label: 'Fleets onboard' },
+  { value: 2500, suffix: '+', label: 'Fleets onboard' },
   { value: 12, suffix: 'K+', label: 'Vehicles reporting live' },
   { value: 98, suffix: '%', label: 'Support satisfaction' },
 ];
