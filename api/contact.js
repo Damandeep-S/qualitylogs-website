@@ -74,7 +74,7 @@ export default async function handler(req, res) {
   <div style="max-width:560px;margin:0 auto;background:#ffffff;border-radius:14px;overflow:hidden;border:1px solid #e4e9ec;">
     <div style="background:#082635;padding:20px 24px;">
       <div style="color:#18C8DB;font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:bold;">Quality Logs</div>
-      <div style="color:#ffffff;font-size:19px;font-weight:bold;margin-top:4px;">New demo request</div>
+      <div style="color:#ffffff;font-size:19px;font-weight:bold;margin-top:4px;">New website inquiry</div>
     </div>
     <table style="width:100%;border-collapse:collapse;">
       ${row('Name', name)}
@@ -103,7 +103,8 @@ export default async function handler(req, res) {
         sender: { name: process.env.BREVO_SENDER_NAME || 'Quality Logs', email: senderEmail },
         to: [{ email: toEmail }],
         replyTo: { email, name },
-        subject: `Demo request — ${name}${company ? ` (${company})` : ''}`,
+        /* Front-load what the team triages on: who, which fleet, how big. */
+        subject: ['New inquiry', name, company, fleetSize].filter(Boolean).join(' · '),
         htmlContent,
       }),
     });
