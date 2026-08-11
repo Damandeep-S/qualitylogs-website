@@ -107,23 +107,12 @@ function DemoForm() {
     event.preventDefault();
     setStatus('sending');
     try {
-      const res = await fetch('https://formsubmit.co/ajax/support@qualitylogs.us', {
+      const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({
-          _subject: `Demo request — ${form.name}`,
-          _template: 'table',
-          _captcha: 'false',
-          Name: form.name,
-          Email: form.email,
-          Phone: form.phone || '—',
-          'Company / fleet': form.company || '—',
-          'Fleet size': form.fleetSize || '—',
-          'Interested in': form.services.join(', ') || '—',
-          Message: form.message || '—',
-        }),
+        body: JSON.stringify(form),
       });
-      if (!res.ok) throw new Error(`FormSubmit responded ${res.status}`);
+      if (!res.ok) throw new Error(`Contact API responded ${res.status}`);
       setStatus('sent');
     } catch {
       setStatus('error');
