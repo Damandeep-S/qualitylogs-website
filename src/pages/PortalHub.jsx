@@ -25,8 +25,7 @@ const PORTALS = [
     icon: TbGasStation,
     name: 'Fuel Portal',
     desc: 'Card balance, driver limits and fuel statements.',
-    href: 'https://portal.cfcorps.com/',
-    domain: 'portal.cfcorps.com',
+    soon: true,
   },
 ];
 
@@ -106,10 +105,10 @@ export default function PortalHub() {
           {PORTALS.map((portal, i) => (
             <Box
               key={portal.name}
-              component={motion.a}
-              href={portal.href}
-              target="_blank"
-              rel="noopener noreferrer"
+              component={portal.soon ? motion.div : motion.a}
+              href={portal.soon ? undefined : portal.href}
+              target={portal.soon ? undefined : '_blank'}
+              rel={portal.soon ? undefined : 'noopener noreferrer'}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 + i * 0.12, duration: 0.7, ease: easeOut }}
@@ -123,13 +122,18 @@ export default function PortalHub() {
                 p: 3,
                 textDecoration: 'none',
                 overflow: 'hidden',
-                transition: 'transform 0.3s cubic-bezier(0.22,1,0.36,1), border-color 0.3s ease, box-shadow 0.3s ease',
-                '&:hover': {
-                  transform: 'translateY(-5px)',
-                  borderColor: 'rgba(24, 200, 219, 0.45)',
-                  boxShadow: '0 24px 60px rgba(4, 16, 26, 0.3), 0 0 40px rgba(24, 200, 219, 0.06)',
-                  '& .portal-arrow': { transform: 'translate(2px, -2px)', color: 'var(--accent)' },
-                },
+                ...(portal.soon
+                  ? { borderStyle: 'dashed' }
+                  : {
+                      transition:
+                        'transform 0.3s cubic-bezier(0.22,1,0.36,1), border-color 0.3s ease, box-shadow 0.3s ease',
+                      '&:hover': {
+                        transform: 'translateY(-5px)',
+                        borderColor: 'rgba(24, 200, 219, 0.45)',
+                        boxShadow: '0 24px 60px rgba(4, 16, 26, 0.3), 0 0 40px rgba(24, 200, 219, 0.06)',
+                        '& .portal-arrow': { transform: 'translate(2px, -2px)', color: 'var(--accent)' },
+                      },
+                    }),
               }}
             >
               <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
@@ -147,13 +151,32 @@ export default function PortalHub() {
                 >
                   <portal.icon size={25} />
                 </Box>
-                <Box
-                  component="span"
-                  className="portal-arrow"
-                  sx={{ display: 'inline-flex', color: 'var(--ink-3)', transition: 'transform 0.3s ease, color 0.3s ease' }}
-                >
-                  <TbArrowUpRight size={22} />
-                </Box>
+                {portal.soon ? (
+                  <Box
+                    component="span"
+                    sx={{
+                      px: 1.25,
+                      py: 0.5,
+                      borderRadius: 999,
+                      border: '1px solid var(--stroke-strong)',
+                      fontSize: 10.5,
+                      fontWeight: 700,
+                      letterSpacing: '0.12em',
+                      textTransform: 'uppercase',
+                      color: 'var(--ink-3)',
+                    }}
+                  >
+                    Soon
+                  </Box>
+                ) : (
+                  <Box
+                    component="span"
+                    className="portal-arrow"
+                    sx={{ display: 'inline-flex', color: 'var(--ink-3)', transition: 'transform 0.3s ease, color 0.3s ease' }}
+                  >
+                    <TbArrowUpRight size={22} />
+                  </Box>
+                )}
               </Box>
 
               <Typography variant="h6" sx={{ mt: 2.25, fontSize: '1.12rem', color: 'var(--ink-1)' }}>
@@ -173,7 +196,7 @@ export default function PortalHub() {
                   color: 'var(--ink-3)',
                 }}
               >
-                {portal.domain}
+                {portal.soon ? 'Launching soon' : portal.domain}
               </Box>
             </Box>
           ))}

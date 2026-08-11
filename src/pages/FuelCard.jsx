@@ -5,9 +5,8 @@ import Typography from '@mui/material/Typography';
 import { motion } from 'framer-motion';
 import {
   TbArrowRight,
-  TbCreditCard,
+  TbClock,
   TbDeviceMobile,
-  TbExternalLink,
   TbGasStation,
   TbMapPin,
   TbReceipt2,
@@ -80,7 +79,7 @@ function FuelHero() {
             }}
           >
             <TbGasStation size={15} color="#18C8DB" />
-            Quality Logs Fuel Card
+            Quality Logs Fuel Card · Coming soon
           </Box>
         </motion.div>
 
@@ -126,8 +125,8 @@ function FuelHero() {
           transition={{ delay: 0.7, duration: 0.8, ease: easeOut }}
         >
           <Typography sx={{ mt: 3, mx: 'auto', maxWidth: 560, fontSize: { xs: '1rem', md: '1.12rem' }, lineHeight: 1.65, color: 'var(--ink-2)' }}>
-            Prepaid, cardless fueling on the Circle network — TA, Petro and Love's — with real
-            discounts on every gallon, not points you'll never use.
+            Prepaid, cardless fueling with real discounts on every gallon, not points you'll never
+            use. The program launches soon — get on the list and we'll set you up on day one.
           </Typography>
 
           <Box sx={{ mt: 4.5, display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: 2 }}>
@@ -146,26 +145,7 @@ function FuelHero() {
                 '&:hover': { background: 'linear-gradient(135deg, #2BD3E5 0%, #74E4F2 100%)' },
               }}
             >
-              Get the card
-            </Button>
-            <Button
-              component="a"
-              href="https://cfcorps.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              endIcon={<TbExternalLink size={17} />}
-              sx={{
-                px: 3.25,
-                py: 1.4,
-                fontWeight: 700,
-                fontSize: '0.98rem',
-                color: 'var(--ink-1)',
-                border: '1px solid var(--stroke-strong)',
-                background: 'var(--glass)',
-                '&:hover': { background: 'var(--glass-strong)' },
-              }}
-            >
-              Visit cfcorps.com
+              Join the waitlist
             </Button>
           </Box>
         </motion.div>
@@ -189,8 +169,8 @@ const FEATURES = [
   },
   {
     icon: TbMapPin,
-    title: 'Circle network coverage',
-    desc: 'In-network discounts at TA, Petro and Love’s locations across the country — the stops your drivers already use.',
+    title: 'Nationwide truck stop coverage',
+    desc: 'In-network discounts at major truck stops across the country — the stops your drivers already run. Full network list at launch.',
   },
   {
     icon: TbReceipt2,
@@ -260,9 +240,9 @@ function FuelFeatures() {
   );
 }
 
-/* ---------- CFCorps band ---------- */
+/* ---------- Coming soon band ---------- */
 
-function CfcorpsBand() {
+function ComingSoonBand() {
   return (
     <Box component="section" sx={{ py: { xs: 6, md: 8 } }}>
       <Container>
@@ -308,23 +288,21 @@ function CfcorpsBand() {
                 border: '1px solid rgba(94, 221, 238, 0.3)',
               }}
             >
-              <TbCreditCard size={28} color="#5EDDEE" />
+              <TbClock size={28} color="#5EDDEE" />
             </Box>
             <Box sx={{ flex: 1, minWidth: 240 }}>
               <Typography variant="h6" sx={{ fontSize: '1.2rem', color: '#ECF4F7' }}>
-                The fuel program runs on CFCorps
+                Fuel card — coming soon
               </Typography>
               <Typography sx={{ mt: 0.75, fontSize: '0.92rem', lineHeight: 1.6, color: '#96ADBA', maxWidth: 560 }}>
-                Our dedicated fuel platform — apply, load funds, set driver controls and track every
-                gallon from one dashboard.
+                We're finalizing the fuel network and the card platform. Tell us your fleet size and
+                we'll reach out the moment applications open.
               </Typography>
             </Box>
             <Button
-              component="a"
-              href="https://cfcorps.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              endIcon={<TbExternalLink size={17} />}
+              component={RouterLink}
+              to="/contact"
+              endIcon={<TbArrowRight size={17} />}
               sx={{
                 px: 3,
                 py: 1.25,
@@ -335,7 +313,7 @@ function CfcorpsBand() {
                 '&:hover': { background: 'linear-gradient(135deg, #2BD3E5, #74E4F2)' },
               }}
             >
-              Open CFCorps
+              Notify me
             </Button>
           </Box>
         </Reveal>
@@ -349,7 +327,7 @@ export default function FuelCard() {
     <>
       <FuelHero />
       <FuelFeatures />
-      <CfcorpsBand />
+      <ComingSoonBand />
       <CtaBanner />
     </>
   );
